@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import RecordList from "./components/recordList";
 import Edit from "./components/edit";
+import View from "./components/view";
 import Create from "./components/create";
  
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
      <Routes>
        <Route exact path="/" element={<RecordList />} />
        <Route path="/edit/:id" element={<Edit />} />
+       <Route path="/view/:id" element={<View />} />
        <Route path="/create" element={<Create />} />
      </Routes>
    </div>
