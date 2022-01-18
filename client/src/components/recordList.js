@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Record = (props) => (
 	<tr>
-	<td>{props.record.person_name}</td>
-	<td>{props.record.person_position}</td>
-	<td>{props.record.person_level}</td>
+	<td>{props.record.name}</td>
+	<td>{props.record.position}</td>
+	<td>{props.record.level}</td>
 	<td>
 		<Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> | 
 		<button className="btn btn-link" onClick={() => {
@@ -39,9 +39,9 @@ export default function RecordList() {
 	// this will delete a record
 	async function deleteRecord(id) {
 		await fetch(`http://localhost:5000/${id}`, {
-			method: "DELETE"
-		});
-
+			method: "DELETE",
+		}).then(window.location.reload());
+		
 		const newRecords = records.filter((el) => el._id !== id);
 		setRecords(newRecords);
 	}

@@ -46,9 +46,9 @@ export default function Edit() {
 	async function onSubmit(e) {
 		e.preventDefault();
 		const editedPerson = {
-			name: form.person_name,
-			position: form.person_position,
-			level: form.person_level,
+			name: form.name,
+			position: form.position,
+			level: form.level,
 		};
 
 		// this will send a post request to update the data in the databse
@@ -74,7 +74,7 @@ export default function Edit() {
 		           type="text"
 		           className="form-control"
 		           id="name"
-		           value={form.person_name}
+		           value={form.name}
 		           onChange={(e) => updateForm({ name: e.target.value })}
 		         />
 		       </div>
@@ -84,7 +84,7 @@ export default function Edit() {
 		           type="text"
 		           className="form-control"
 		           id="position"
-		           value={form.person_position}
+		           value={form.position}
 		           onChange={(e) => updateForm({ position: e.target.value })}
 		         />
 		       </div>
@@ -96,7 +96,7 @@ export default function Edit() {
 		             name="positionOptions"
 		             id="positionIntern"
 		             value="Intern"
-		             checked={form.person_level === "Intern"}
+		             checked={form.level === "Intern"}
 		             onChange={(e) => updateForm({ level: e.target.value })}
 		           />
 		           <label htmlFor="positionIntern" className="form-check-label">Intern</label>
@@ -108,7 +108,7 @@ export default function Edit() {
 		             name="positionOptions"
 		             id="positionJunior"
 		             value="Junior"
-		             checked={form.person_level === "Junior"}
+		             checked={form.level === "Junior"}
 		             onChange={(e) => updateForm({ level: e.target.value })}
 		           />
 		           <label htmlFor="positionJunior" className="form-check-label">Junior</label>
@@ -120,7 +120,7 @@ export default function Edit() {
 		             name="positionOptions"
 		             id="positionSenior"
 		             value="Senior"
-		             checked={form.person_level === "Senior"}
+		             checked={form.level === "Senior"}
 		             onChange={(e) => updateForm({ level: e.target.value })}
 		           />
 		           <label htmlFor="positionSenior" className="form-check-label">Senior</label>
